@@ -3,7 +3,7 @@ import React from 'react';
 
 const Contacts = () => {
   return (
-    <Box flex={2}>
+    <Flex flex={2} flexDir={'column'} gap={50} justify={'space-between'}>
       <Text
         color={'bodyWhite'}
         fontSize={'30px'}
@@ -22,7 +22,7 @@ const Contacts = () => {
           +380684004040
         </Button>
       </Flex>
-    </Box>
+    </Flex>
   );
 };
 
