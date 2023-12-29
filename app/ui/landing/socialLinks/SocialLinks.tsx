@@ -11,7 +11,7 @@ const ArrowSvg = ({ color }: { color: string }) => {
       viewBox="0 0 16 16"
       fill={color}
     >
-      <g clip-path="url(#clip0_451_6902)">
+      <g clipPath="url(#clip0_451_6902)">
         <path
           d="M4.34568 13.0197L10.9432 6.42212L10.9432 12.4775L12.4774 12.4775V3.8037H3.80357L3.80357 5.33789L9.85899 5.33789L3.26145 11.9354L4.34568 13.0197Z"
           // fill={color}
