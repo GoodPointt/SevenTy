@@ -1,4 +1,4 @@
-export const socalLinks = [
+export const SOCIAL_LINKS = [
   {
     title: 'Telegram',
     url: 'https://t.me',
@@ -12,3 +12,7 @@ export const socalLinks = [
     url: 'mailto:7ty.dev@gmail.com',
   },
 ];
+
+export const EMAIL = '7ty.dev@gmail.com';
+
+export const PHONE = '+380684004040';

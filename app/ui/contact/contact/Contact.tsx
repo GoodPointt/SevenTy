@@ -5,8 +5,6 @@ import ContactForm from './contactForm/ContactForm';
 import { Flex } from '@chakra-ui/react';
 import Contacts from './contacts/Contacts';
 
-const inactiveBlack = 'rgba(250, 250, 250, 0.4)';
-
 const Contact = () => {
   return (
     <SectionWrapper bg="formBlack" borderTopRadius={'50px'}>

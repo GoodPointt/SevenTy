@@ -4,9 +4,14 @@ import { useFormStatus } from 'react-dom';
 interface ISubmitButton {
   children: React.ReactNode;
   variant: 'accent' | 'accentAlt' | 'solid';
+  isSubmitting: boolean;
 }
 
-const SubmitButton: React.FC<ISubmitButton> = ({ children, variant }) => {
+const SubmitButton: React.FC<ISubmitButton> = ({
+  children,
+  variant,
+  isSubmitting,
+}) => {
   const { pending } = useFormStatus();
 
   return (
@@ -14,8 +19,8 @@ const SubmitButton: React.FC<ISubmitButton> = ({ children, variant }) => {
       variant={variant}
       transition={'all 0.3s'}
       type="submit"
-      isLoading={pending}
-      isDisabled={pending}
+      isLoading={pending || isSubmitting}
+      isDisabled={pending || isSubmitting}
       display={'flex'}
     >
       {children}

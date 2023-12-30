@@ -1,3 +1,5 @@
+'use server';
+
 import { z } from 'zod';
 
 const schema = z
@@ -13,12 +15,12 @@ const schema = z
       .min(2, { message: 'invalid' })
       .nullable()
       .refine((value) => value === 'on', {
-        message: 'Policy must be "on".',
+        message: 'required',
       }),
   })
   .partial();
 
-interface IFormFields {
+export interface IFormFields {
   name?: string | undefined;
   phone?: string | undefined;
   policy?: string | undefined;
@@ -58,19 +60,15 @@ export async function submitData(
     };
   }
 
-  try {
-    await setTimeout(
-      async () =>
-        alert(
-          `👌 ✅ 🌈 ❤️\n\n😎${name} \n\n📞${phone} \n\nSubmitted succesfully!`
-        ),
-      500
-    );
-    // const res = await createContact({ name, phone });
+  if (!policy) {
+    return {
+      errors: { policy: ['required'] },
+      message: 'Error.',
+    };
+  }
 
-    // if (res) {
+  try {
     return { name, phone, policy, message: 'success' };
-    // }
   } catch (error) {
     console.error(error);
   }

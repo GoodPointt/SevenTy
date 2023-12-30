@@ -30,7 +30,12 @@ export const theme = extendTheme({
           padding: '30px 0',
           color: 'bodyWhite',
           borderRadius: '50px',
-          _hover: { color: 'inactiveWhite' },
+          _hover: {
+            color: 'inactiveWhite',
+            _disabled: {
+              background: 'accent',
+            },
+          },
         },
         accentAlt: {
           bg: 'transparent',
