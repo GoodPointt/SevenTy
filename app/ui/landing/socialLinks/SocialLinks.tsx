@@ -1,4 +1,4 @@
-import { socalLinks } from '@/app/lib/data';
+import { SOCIAL_LINKS } from '@/app/lib/constants';
 import { Flex, Link, Text } from '@chakra-ui/react';
 import React from 'react';
 
@@ -29,8 +29,8 @@ const ArrowSvg = ({ color }: { color: string }) => {
 const SocialLinks = () => {
   return (
     <Flex as={'ul'}>
-      {socalLinks.length > 0 &&
-        socalLinks.map(({ title, url }) => (
+      {SOCIAL_LINKS.length > 0 &&
+        SOCIAL_LINKS.map(({ title, url }) => (
           <li key={title}>
             <Link
               display={'flex'}

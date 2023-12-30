@@ -1,4 +1,5 @@
-import { Box, Button, Flex, Text } from '@chakra-ui/react';
+import { EMAIL, PHONE } from '@/app/lib/constants';
+import { Button, Flex, Text } from '@chakra-ui/react';
 import React from 'react';
 
 const Contacts = () => {
@@ -15,11 +16,11 @@ const Contacts = () => {
         are always happy to share our experience.👋
       </Text>
       <Flex justify={'space-between'} gap={'20px'}>
-        <Button as={'a'} href="mailto:7ty.dev@gmail.com" variant={'accentAlt'}>
-          seventy@gmail.com
+        <Button as={'a'} href={`mailto:${EMAIL}`} variant={'accentAlt'}>
+          {EMAIL}
         </Button>
-        <Button as={'a'} href="tel:+380684004040" variant={'accentAlt'}>
-          +380684004040
+        <Button as={'a'} href={`tel:${PHONE}`} variant={'accentAlt'}>
+          {PHONE}
         </Button>
       </Flex>
     </Flex>
