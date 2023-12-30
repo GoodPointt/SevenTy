@@ -15,7 +15,7 @@ export const theme = extendTheme({
 		inactiveWhite: '#BDBDBD',
 		accent:
 			'linear-gradient(276deg, rgba(214, 75, 25, 1) 0.35%, rgba(223, 78, 26, 1) 41.11%, rgba(253, 169, 0, 1) 100.69%)',
-		accentAlt: 'linear-gradient(to right, #f56565, #ed8936, #f6e05e);',
+		accentAlt: 'linear-gradient(to right, #f56565, #ed8936, #f6e05e)',
 	},
 	components: {
 		Button: {

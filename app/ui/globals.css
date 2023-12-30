@@ -19,10 +19,31 @@ body {
 	height: 100%;
 }
 
-body {
-	color: rgb(var(--foreground-rgb));
-	background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
-		rgb(var(--background-start-rgb));
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+	width: 0.5rem;
+	height: 0.7rem;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+	background: linear-gradient(
+		276deg,
+		rgba(214, 75, 25, 1) 0.35%,
+		rgba(223, 78, 26, 1) 41.11%,
+		rgba(253, 169, 0, 1) 100.69%
+	);
+	border-radius: 1.4rem;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+	background: #575757;
 }
 
 .app {
@@ -77,12 +98,6 @@ body {
 		padding: 0;
 	}
 }
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-} */
 
 hr {
 	height: 0;
@@ -228,7 +243,8 @@ button {
 }
 
 ul,
-ol {
+ol,
+dl {
 	list-style: none;
 	padding-left: none;
 	margin: 0;
@@ -243,8 +259,4 @@ a {
 
 a:hover {
 	text-decoration: none;
-}
-
-.recharts-surface {
-	color: white;
 }
