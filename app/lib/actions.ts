@@ -21,14 +21,14 @@ const schema = z
   .partial();
 
 export interface IFormFields {
-  name?: string | undefined;
-  phone?: string | undefined;
-  policy?: string | undefined;
+  name?: string;
+  phone?: string;
+  policy?: string;
   message?: string;
   errors?: {
-    name?: string[] | undefined;
-    phone?: string[] | undefined;
-    policy?: string[] | undefined;
+    name?: string[];
+    phone?: string[];
+    policy?: string[];
   };
 }
 
