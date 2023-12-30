@@ -28,6 +28,7 @@ const ContactForm = () => {
         try {
           setIsSubmitting(true);
           const res = await sendEmail(state);
+          console.log(res);
           if (res?.status === 200) {
             alert(
               `👌 ✅ 🌈 ❤️\n\n😎${state?.name} \n\n📞${state?.phone} \n\nSubmitted succesfully!`
