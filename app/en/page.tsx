@@ -1,5 +1,7 @@
-import Hero from '../ui/landing/hero/Hero';
+import Hero from '../ui/landing/hero/Hero'
 
-export default function LandingPage() {
-  return <Hero />;
+const LandingPage = () => {
+	return <Hero />
 }
+
+export default LandingPage

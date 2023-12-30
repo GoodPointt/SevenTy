@@ -1,8 +1,7 @@
-import Projects from '@/app/ui/work/Projects';
-import React from 'react';
+import Projects from '@/app/ui/work/Projects'
 
 const WorkPage = () => {
-  return <Projects />;
-};
+	return <Projects />
+}
 
-export default WorkPage;
+export default WorkPage
