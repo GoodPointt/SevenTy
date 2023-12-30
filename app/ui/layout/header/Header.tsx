@@ -1,5 +1,6 @@
 'use client'
 
+import Logo from '@/public/img/SevenTy_Logo.png'
 import { Link } from '@chakra-ui/next-js'
 import { Box, Flex } from '@chakra-ui/react'
 import Image from 'next/image'
@@ -9,7 +10,7 @@ import SectionWrapper from '../../sectionWrapper/SectionWrapper'
 const NavBar = () => {
 	return (
 		<>
-			<Link href="/en">
+			<Link href="/">
 				<Box
 					borderRadius={'50px'}
 					filter="brightness(100%)"
@@ -36,7 +37,7 @@ const NavBar = () => {
 					overflow={'hidden'}
 				>
 					<Image
-						src={'/img/SevenTy_Logo.png'}
+						src={Logo}
 						alt={'Seventy logtype'}
 						fill
 						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -56,7 +57,7 @@ const NavBar = () => {
 				w={'fit-content'}
 				p={2}
 			>
-				<Link href="/en" _hover={{ color: 'inactiveBlack' }}>
+				<Link href="/" _hover={{ color: 'inactiveBlack' }}>
 					SevenTy
 				</Link>
 				<Link href="/en/work" _hover={{ color: 'inactiveBlack' }}>
