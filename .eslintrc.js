@@ -76,5 +76,14 @@ module.exports = {
 				allow: ['warn', 'error'],
 			},
 		],
+		'prettier/prettier': [
+			'error',
+			{
+				useTabs: true,
+				singleQuote: true,
+				tabWidth: 2,
+				endOfLine: 'auto',
+			},
+		],
 	},
 }

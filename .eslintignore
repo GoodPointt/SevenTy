@@ -2,4 +2,4 @@
 **/out/*
 **/.next/*
 coverage
-src/styles/globals.css
+app/ui/globals.css
