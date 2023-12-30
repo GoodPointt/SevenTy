@@ -1,7 +1,7 @@
-import SectionWrapper from '../../sectionWrapper/SectionWrapper';
+import SectionWrapper from '../../sectionWrapper/SectionWrapper'
 
 const Footer = () => {
-  return <SectionWrapper>© SevenTy 2023</SectionWrapper>;
-};
+	return <SectionWrapper>© SevenTy 2023</SectionWrapper>
+}
 
-export default Footer;
+export default Footer
