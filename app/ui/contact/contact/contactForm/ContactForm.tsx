@@ -3,15 +3,7 @@
 import { submitData } from '@/app/lib/actions'
 import sendEmail from '@/app/lib/utils/sendEmail'
 import SubmitButton from '@/app/ui/submitButton/SubmitButton'
-import {
-	Box,
-	Checkbox,
-	Flex,
-	FormControl,
-	FormHelperText,
-	FormLabel,
-	Input,
-} from '@chakra-ui/react'
+import { Box, Checkbox, Flex, FormControl, FormLabel, Input, Tooltip } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 import { useFormState } from 'react-dom'
 
@@ -64,79 +56,97 @@ const ContactForm = () => {
 		>
 			<Flex flexDir={'column'} gap={10}>
 				<FormControl variant="floating" id="name">
-					<Box
-						borderBottom={`1px solid ${nameError ? 'crimson' : inactiveBlack}`}
-						position={'relative'}
+					<Tooltip
+						label={nameError}
+						hasArrow
+						arrowSize={13}
+						isOpen={!!nameError}
+						borderRadius={'10px'}
 					>
-						<Input
-							name="name"
-							type="text"
-							color={'bodyWhite'}
-							placeholder=" "
-							border={'none'}
-							outline={'none'}
-							boxShadow={'none'}
-							borderColor={'transparent'}
-							_focus={{
-								outlineColor: 'transparent',
-								borderColor: 'transparent',
-								boxShadow: 'none',
-							}}
-						/>
-						<FormLabel color={inactiveBlack}>Name*</FormLabel>
-						{nameError && (
-							<FormHelperText color={'error'} pos={'absolute'} bottom={'-5'} right={'0'}>
-								Invalid Name
-							</FormHelperText>
-						)}
-					</Box>
+						<Box
+							borderBottom={`1px solid ${nameError ? 'crimson' : inactiveBlack}`}
+							position={'relative'}
+						>
+							<Input
+								name="name"
+								type="text"
+								color={'bodyWhite'}
+								placeholder=" "
+								border={'none'}
+								outline={'none'}
+								boxShadow={'none'}
+								borderColor={'transparent'}
+								_focus={{
+									outlineColor: 'transparent',
+									borderColor: 'transparent',
+									boxShadow: 'none',
+								}}
+							/>
+							<FormLabel color={inactiveBlack}>Name*</FormLabel>
+						</Box>
+					</Tooltip>
 				</FormControl>
 				<FormControl variant="floating" id="phone" isInvalid={false}>
-					<Box
-						borderBottom={`1px solid ${phoneError ? 'crimson' : inactiveBlack}`}
-						pos={'relative'}
+					<Tooltip
+						label={phoneError}
+						hasArrow
+						arrowSize={13}
+						isOpen={!!phoneError}
+						borderRadius={'10px'}
 					>
-						<Input
-							name="phone"
-							type="tel"
-							color={'bodyWhite'}
-							placeholder=" "
-							border={'none'}
-							outline={'none'}
-							boxShadow={'none'}
-							borderColor={'transparent'}
-							_focus={{
-								outlineColor: 'transparent',
-								borderColor: 'transparent',
-								boxShadow: 'none',
-							}}
-						/>
-						<FormLabel color={inactiveBlack}>Phone*</FormLabel>
-						{phoneError && (
-							<FormHelperText pos={'absolute'} bottom={'-5'} right={'0'} color={'error'}>
-								Invalid phone
-							</FormHelperText>
-						)}
-					</Box>
+						<Box
+							borderBottom={`1px solid ${phoneError ? 'crimson' : inactiveBlack}`}
+							pos={'relative'}
+						>
+							<Input
+								name="phone"
+								type="tel"
+								color={'bodyWhite'}
+								placeholder=" "
+								border={'none'}
+								outline={'none'}
+								boxShadow={'none'}
+								borderColor={'transparent'}
+								_focus={{
+									outlineColor: 'transparent',
+									borderColor: 'transparent',
+									boxShadow: 'none',
+								}}
+							/>
+							<FormLabel color={inactiveBlack}>Phone*</FormLabel>
+						</Box>
+					</Tooltip>
 				</FormControl>
 				<FormControl mt={8}>
-					<Checkbox
-						name="policy"
-						px={4}
-						colorScheme="gray"
-						fontSize={'12px'}
-						fontStyle={'normal'}
-						fontWeight={500}
-						lineHeight={'13.2px'}
-						color={policyError ? 'error' : inactiveBlack}
-						css={{
-							'& .chakra-checkbox__control': {
-								border: `1px solid ${policyError ? 'crimson' : inactiveBlack}`,
-							},
-						}}
+					<Tooltip
+						mt={2}
+						ml={'-7px'}
+						label={policyError}
+						hasArrow
+						arrowSize={13}
+						isOpen={!!policyError}
+						borderRadius={'10px'}
+						placement="bottom-start"
 					>
-						By clicking the button, I agree to the processing of personal data.
-					</Checkbox>
+						<Checkbox
+							name="policy"
+							px={4}
+							colorScheme="gray"
+							fontSize={'12px'}
+							fontStyle={'normal'}
+							fontWeight={500}
+							lineHeight={'13.2px'}
+							// color={policyError ? 'error' : inactiveBlack}
+							color={inactiveBlack}
+							css={{
+								'& .chakra-checkbox__control': {
+									border: `1px solid ${policyError ? 'crimson' : inactiveBlack}`,
+								},
+							}}
+						>
+							By clicking the button, I agree to the processing of personal data.
+						</Checkbox>
+					</Tooltip>
 				</FormControl>
 			</Flex>
 			<SubmitButton variant={'accent'} isSubmitting={isSubmitting}>

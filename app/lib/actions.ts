@@ -7,15 +7,19 @@ const schema = z
 		name: z
 			.string()
 			.trim()
-			.min(2, { message: 'required' })
-			.regex(new RegExp(/^[a-zA-Z\u0400-\u04FF\s'-]+$/), 'invalid'),
-		phone: z.string().trim().min(8, { message: 'invalid' }),
+			.min(1, { message: 'Name is required' })
+			.regex(new RegExp(/^[a-zA-Z\u0400-\u04FF\s'-]+$/), 'Name should contain only letters'),
+		phone: z
+			.string()
+			.trim()
+			.min(1, { message: 'Phone number is required' })
+			.regex(new RegExp(/^[\d+\-\s()]+$/), 'Phone should contain only numbers'),
 		policy: z
 			.string()
 			.min(2, { message: 'invalid' })
 			.nullable()
 			.refine((value) => value === 'on', {
-				message: 'required',
+				message: 'Need to agreed processing of personal data',
 			}),
 	})
 	.partial()
@@ -50,7 +54,7 @@ export async function submitData(
 		const errorsRes = validatedFields.error.flatten().fieldErrors
 		if (!policy) {
 			return {
-				errors: { ...errorsRes, policy: ['required'] },
+				errors: { ...errorsRes, policy: ['Need to agreed processing of personal data'] },
 				message: 'Error.',
 			}
 		}
@@ -63,7 +67,7 @@ export async function submitData(
 
 	if (!policy) {
 		return {
-			errors: { policy: ['required'] },
+			errors: { policy: ['Need to agreed processing of personal data'] },
 			message: 'Error.',
 		}
 	}
