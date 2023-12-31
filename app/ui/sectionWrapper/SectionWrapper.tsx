@@ -2,6 +2,7 @@ import { Box, Container, Heading } from '@chakra-ui/react'
 import React from 'react'
 
 interface ISectionWrapper {
+	id?: string
 	position?: 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky'
 	children: React.ReactNode
 	bg?: string
@@ -16,6 +17,7 @@ interface ISectionWrapper {
 }
 
 const SectionWrapper: React.FC<ISectionWrapper> = ({
+	id,
 	position = 'static',
 	children,
 	bg = 'transparent',
@@ -30,6 +32,7 @@ const SectionWrapper: React.FC<ISectionWrapper> = ({
 }) => {
 	return (
 		<Box
+			id={id}
 			style={style}
 			position={position}
 			as={as}

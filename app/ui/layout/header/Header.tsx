@@ -9,8 +9,16 @@ import SectionWrapper from '../../sectionWrapper/SectionWrapper'
 
 const NavBar = () => {
 	return (
-		<>
-			<Link href="/">
+		<Flex
+			as="nav"
+			gap={10}
+			color={'bodyWhite'}
+			bgColor={'headerBlack'}
+			borderRadius={'50px'}
+			w={'fit-content'}
+			align={'center'}
+		>
+			<Link href="/#home">
 				<Box
 					borderRadius={'50px'}
 					filter="brightness(100%)"
@@ -48,32 +56,58 @@ const NavBar = () => {
 					/>
 				</Box>
 			</Link>
-			<Flex
-				as="nav"
-				gap={10}
-				color={'bodyWhite'}
-				bgColor={'headerBlack'}
-				borderRadius={'50px'}
-				w={'fit-content'}
-				p={2}
+			<Link
+				href="/#hero"
+				_hover={{ color: 'inactiveBlack' }}
+				onClick={(e) => {
+					e.preventDefault()
+					document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })
+				}}
 			>
-				<Link href="/" _hover={{ color: 'inactiveBlack' }}>
-					SevenTy
-				</Link>
-				<Link href="/en/work" _hover={{ color: 'inactiveBlack' }}>
-					Work
-				</Link>
-				<Link href="/en/contact" _hover={{ color: 'inactiveBlack' }}>
-					Contact
-				</Link>
-			</Flex>
-		</>
+				SevenTy
+			</Link>
+			<Link
+				href="/#work"
+				_hover={{ color: 'inactiveBlack' }}
+				onClick={(e) => {
+					e.preventDefault()
+					document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })
+				}}
+			>
+				Work
+			</Link>
+			<Link
+				href="/#contactForm"
+				_hover={{ color: 'inactiveBlack' }}
+				onClick={(e) => {
+					e.preventDefault()
+					document.getElementById('contactForm')?.scrollIntoView({ behavior: 'smooth' })
+				}}
+			>
+				Contact
+			</Link>
+
+			{/*!?! THIS VARIANT ADD #ID INTO PATHNAME */}
+			{/* <Link
+				href="#contactForm"
+				scroll={true}
+				_hover={{ color: 'inactiveBlack' }}
+				scrollBehavior={'smooth'}
+			>
+				1_TEST_SCROLL_LINK
+			</Link> */}
+		</Flex>
 	)
 }
 
 const Header = () => {
 	return (
-		<SectionWrapper as={'header'}>
+		<SectionWrapper
+			as={'header'}
+			position={'fixed'}
+			style={{ top: 0, left: 0, right: 0 }}
+			py={{ base: '0', lg: '0', xl: '0' }}
+		>
 			<NavBar />
 		</SectionWrapper>
 	)

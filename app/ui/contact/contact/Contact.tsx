@@ -7,7 +7,7 @@ import Contacts from './contacts/Contacts'
 
 const Contact = () => {
 	return (
-		<SectionWrapper bg="formBlack" borderTopRadius={'50px'}>
+		<SectionWrapper bg="formBlack" borderTopRadius={'50px'} id={'contactForm'}>
 			<Flex gap={{ base: '100px', lg: '126px', xl: '165' }} flexDir={{ base: 'column', lg: 'row' }}>
 				<Contacts />
 				<ContactForm />

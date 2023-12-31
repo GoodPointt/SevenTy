@@ -6,7 +6,7 @@ import SocialLinks from '../socialLinks/SocialLinks'
 
 const Hero = () => {
 	return (
-		<SectionWrapper>
+		<SectionWrapper id={'hero'}>
 			<Center h={'fit-content'}>
 				<Heading
 					as={'h1'}
