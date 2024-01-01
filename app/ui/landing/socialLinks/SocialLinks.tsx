@@ -35,15 +35,23 @@ const SocialLinks = () => {
 							size="md"
 							minH="48px"
 							width="fit-content"
-							color="bodyBlack"
+							color="gray"
 							transition="all 300ms ease"
 							_hover={{
-								// color: 'headerBlack',
-								transform: 'translateX(1px) translateY(-1px)',
+								color: 'gray.700',
+							}}
+							css={{
+								'&:hover svg': {
+									transform: 'translateX(1px) translateY(-1px)',
+									transition: 'all 300ms ease',
+								},
+								'& svg': {
+									transition: 'all 300ms ease',
+								},
 							}}
 						>
 							<Text>{title}</Text>
-							<ArrowSvg color="headerBlack" />
+							<ArrowSvg color="gray" />
 						</Link>
 					</li>
 				))}
