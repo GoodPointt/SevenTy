@@ -18,7 +18,13 @@ const NavBar = () => {
 			w={'fit-content'}
 			align={'center'}
 		>
-			<Link href="/#home">
+			<Link
+				href="#hero"
+				scroll={false}
+				onClick={() => {
+					document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })
+				}}
+			>
 				<Box
 					borderRadius={'50px'}
 					filter="brightness(100%)"
@@ -57,45 +63,35 @@ const NavBar = () => {
 				</Box>
 			</Link>
 			<Link
-				href="/#hero"
+				href="#hero"
 				_hover={{ color: 'inactiveBlack' }}
-				onClick={(e) => {
-					e.preventDefault()
+				scroll={false}
+				onClick={() => {
 					document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })
 				}}
 			>
 				SevenTy
 			</Link>
 			<Link
-				href="/#work"
+				href="#work"
 				_hover={{ color: 'inactiveBlack' }}
-				onClick={(e) => {
-					e.preventDefault()
+				scroll={false}
+				onClick={() => {
 					document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })
 				}}
 			>
 				Work
 			</Link>
 			<Link
-				href="/#contactForm"
+				href="#contactForm"
+				scroll={false}
 				_hover={{ color: 'inactiveBlack' }}
-				onClick={(e) => {
-					e.preventDefault()
+				onClick={() => {
 					document.getElementById('contactForm')?.scrollIntoView({ behavior: 'smooth' })
 				}}
 			>
 				Contact
 			</Link>
-
-			{/*!?! THIS VARIANT ADD #ID INTO PATHNAME */}
-			{/* <Link
-				href="#contactForm"
-				scroll={true}
-				_hover={{ color: 'inactiveBlack' }}
-				scrollBehavior={'smooth'}
-			>
-				1_TEST_SCROLL_LINK
-			</Link> */}
 		</Flex>
 	)
 }
