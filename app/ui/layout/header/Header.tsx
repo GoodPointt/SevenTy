@@ -21,7 +21,8 @@ const NavBar = () => {
 			<Link
 				href="#hero"
 				scroll={false}
-				onClick={() => {
+				onClick={(e) => {
+					e.preventDefault()
 					document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })
 				}}
 			>
@@ -66,7 +67,8 @@ const NavBar = () => {
 				href="#hero"
 				_hover={{ color: 'inactiveBlack' }}
 				scroll={false}
-				onClick={() => {
+				onClick={(e) => {
+					e.preventDefault()
 					document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })
 				}}
 			>
@@ -76,7 +78,8 @@ const NavBar = () => {
 				href="#work"
 				_hover={{ color: 'inactiveBlack' }}
 				scroll={false}
-				onClick={() => {
+				onClick={(e) => {
+					e.preventDefault()
 					document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })
 				}}
 			>
@@ -86,7 +89,8 @@ const NavBar = () => {
 				href="#contactForm"
 				scroll={false}
 				_hover={{ color: 'inactiveBlack' }}
-				onClick={() => {
+				onClick={(e) => {
+					e.preventDefault()
 					document.getElementById('contactForm')?.scrollIntoView({ behavior: 'smooth' })
 				}}
 			>
