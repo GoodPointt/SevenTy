@@ -50,11 +50,16 @@ const ContactForm = () => {
 			as={'form'}
 			action={dispatch}
 			ref={ref}
+			// flexDir={'column'}
+			// gap={{ base: 10, lg: 50 }}
+			// justify={'space-between'}
+			flex={2}
+			// pt={'50px'}
 			flexDir={'column'}
-			gap={50}
-			justify={'space-between'}
+			gap={{ base: '50px', lg: 0 }}
+			justify={{ base: 'center', lg: 'space-between' }}
 		>
-			<Flex flexDir={'column'} gap={10}>
+			<Flex flexDir={'column'} gap={{ base: '35px', md: '40px', lg: '100px' }}>
 				<FormControl variant="floating" id="name">
 					<Tooltip
 						label={nameError}
@@ -68,6 +73,7 @@ const ContactForm = () => {
 							position={'relative'}
 						>
 							<Input
+								fontSize={'20px'}
 								name="name"
 								type="text"
 								color={'bodyWhite'}
@@ -82,7 +88,9 @@ const ContactForm = () => {
 									boxShadow: 'none',
 								}}
 							/>
-							<FormLabel color={inactiveBlack}>Name*</FormLabel>
+							<FormLabel color={inactiveBlack} fontSize={{ base: '14px', md: '18px' }}>
+								Name*
+							</FormLabel>
 						</Box>
 					</Tooltip>
 				</FormControl>
@@ -101,6 +109,7 @@ const ContactForm = () => {
 							<Input
 								name="phone"
 								type="tel"
+								fontSize={'20px'}
 								color={'bodyWhite'}
 								placeholder=" "
 								border={'none'}
@@ -113,17 +122,19 @@ const ContactForm = () => {
 									boxShadow: 'none',
 								}}
 							/>
-							<FormLabel color={inactiveBlack}>Phone*</FormLabel>
+							<FormLabel color={inactiveBlack} fontSize={{ base: '14px', md: '18px' }}>
+								Phone*
+							</FormLabel>
 						</Box>
 					</Tooltip>
 				</FormControl>
-				<FormControl mt={8}>
+				<FormControl>
 					<Tooltip
-						mt={2}
+						mt={'8px'}
 						ml={'-7px'}
 						label={policyError}
 						hasArrow
-						arrowSize={13}
+						arrowSize={16}
 						isOpen={!!policyError}
 						borderRadius={'10px'}
 						placement="bottom-start"
@@ -132,15 +143,17 @@ const ContactForm = () => {
 							name="policy"
 							px={4}
 							colorScheme="gray"
-							fontSize={'12px'}
 							fontStyle={'normal'}
 							fontWeight={500}
-							lineHeight={'13.2px'}
-							// color={policyError ? 'error' : inactiveBlack}
 							color={inactiveBlack}
 							css={{
 								'& .chakra-checkbox__control': {
 									border: `1px solid ${policyError ? 'crimson' : inactiveBlack}`,
+								},
+
+								'& span': {
+									fontSize: '16px',
+									lineHeight: 1.1,
 								},
 							}}
 						>

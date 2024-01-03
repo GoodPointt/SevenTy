@@ -4,13 +4,19 @@ import React from 'react'
 
 const Contacts = () => {
 	return (
-		<Flex flex={2} flexDir={'column'} gap={50} justify={'space-between'}>
+		<Flex
+			flex={2}
+			// pt={'50px'}
+			flexDir={'column'}
+			gap={{ base: '50px', lg: 0 }}
+			justify={{ base: 'center', lg: 'space-between' }}
+		>
 			<Text
 				color={'bodyWhite'}
-				fontSize={'30px'}
+				fontSize={{ base: '20px', md: '30px', lg: '40px' }}
 				fontStyle={'normal'}
 				fontWeight={600}
-				lineHeight={'42px'}
+				lineHeight={1.4}
 			>
 				Do you have a project? Contact us and receive a free consultation! We are always happy to
 				share our experience.👋

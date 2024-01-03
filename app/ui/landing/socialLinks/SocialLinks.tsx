@@ -29,6 +29,8 @@ const SocialLinks = () => {
 						<Link
 							display={'flex'}
 							gap={2}
+							justifyContent={'center'}
+							alignItems={'center'}
 							borderRadius={'5px'}
 							p={2}
 							href={url}
@@ -50,7 +52,15 @@ const SocialLinks = () => {
 								},
 							}}
 						>
-							<Text>{title}</Text>
+							<Text
+								fontSize={{
+									base: '12px',
+									md: '14px',
+									lg: '18px',
+								}}
+							>
+								{title}
+							</Text>
 							<ArrowSvg color="gray" />
 						</Link>
 					</li>
