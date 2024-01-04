@@ -1,0 +1,14 @@
+{
+	"navigation": {
+		"menuItems": {
+			"home": "SevenTy",
+			"work": "Проекти",
+			"contact": "Контакти"
+		}
+	},
+	"appControls": {
+		"buttons": {
+			"text": "Звʼязатися з нами"
+		}
+	}
+}
