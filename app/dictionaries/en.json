@@ -1,0 +1,14 @@
+{
+	"navigation": {
+		"menuItems": {
+			"home": "SevenTy",
+			"work": "Work",
+			"contact": "Contact"
+		}
+	},
+	"appControls": {
+		"buttons": {
+			"text": "Get in touch"
+		}
+	}
+}

@@ -96,7 +96,7 @@ main::-webkit-scrollbar-thumb:hover {
 }
 /*END OF SCROLL STYLES*/
 
-.main:before {
+.chakra-ui-light.main:before {
 	background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
 	position: absolute;
 	content: '';
@@ -106,7 +106,7 @@ main::-webkit-scrollbar-thumb:hover {
 	top: 0;
 }
 
-.main:after {
+.chakra-ui-light.main:after {
 	content: '';
 	background-image: url('/img/grid.svg');
 	z-index: 1;
