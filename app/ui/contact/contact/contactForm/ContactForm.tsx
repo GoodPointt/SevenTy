@@ -1,6 +1,7 @@
 'use client'
 
 import { submitData } from '@/app/lib/actions'
+import { sendTgNotification } from '@/app/lib/instance'
 import sendEmail from '@/app/lib/utils/sendEmail'
 import SubmitButton from '@/app/ui/submitButton/SubmitButton'
 import { Box, Checkbox, Flex, FormControl, FormLabel, Input, Tooltip } from '@chakra-ui/react'
@@ -19,6 +20,7 @@ const ContactForm = () => {
 			if (state?.message === 'success') {
 				try {
 					setIsSubmitting(true)
+					await sendTgNotification({ name: state.name, phone: state.phone })
 					const res = await sendEmail(state)
 					if (res?.status === 200) {
 						alert(
