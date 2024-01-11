@@ -1,8 +1,9 @@
 import { EMAIL, PHONE } from '@/app/lib/constants'
+import { IContactProps } from '@/app/lib/interfaces'
 import { Button, Flex, Text } from '@chakra-ui/react'
 import React from 'react'
 
-const Contacts = ({ ctaText }: { ctaText: string }) => {
+const Contacts: React.FC<Omit<IContactProps, 'contactForm'>> = ({ contacts: { ctaText } }) => {
 	return (
 		<Flex
 			flex={2}
