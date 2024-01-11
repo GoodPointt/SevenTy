@@ -5,7 +5,9 @@ export interface IParams {
 }
 
 export interface IContactProps {
-	contacts: { ctaText: string }
+	contacts: {
+		ctaText: string
+	}
 	contactForm: {
 		label: {
 			name: string

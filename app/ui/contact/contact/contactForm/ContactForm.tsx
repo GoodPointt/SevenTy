@@ -11,7 +11,7 @@ import { useFormState } from 'react-dom'
 
 const inactiveBlack = 'rgba(250, 250, 250, 0.4)'
 
-const ContactForm: React.FC<IContactProps> = ({
+const ContactForm: React.FC<Omit<IContactProps, 'contacts'>> = ({
 	contactForm: {
 		label,
 		policyTxt,
