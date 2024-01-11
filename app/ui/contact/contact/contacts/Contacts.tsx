@@ -2,7 +2,7 @@ import { EMAIL, PHONE } from '@/app/lib/constants'
 import { Button, Flex, Text } from '@chakra-ui/react'
 import React from 'react'
 
-const Contacts = () => {
+const Contacts = ({ ctaText }: { ctaText: string }) => {
 	return (
 		<Flex
 			flex={2}
@@ -18,8 +18,7 @@ const Contacts = () => {
 				fontWeight={600}
 				lineHeight={1.4}
 			>
-				Do you have a project? Contact us and receive a free consultation! We are always happy to
-				share our experience.👋
+				{ctaText}
 			</Text>
 			<Flex justify={'space-between'} gap={'20px'}>
 				<Button as={'a'} href={`mailto:${EMAIL}`} variant={'accentAlt'}>

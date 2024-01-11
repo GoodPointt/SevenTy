@@ -7,19 +7,19 @@ const schema = z
 		name: z
 			.string()
 			.trim()
-			.min(1, { message: 'Name is required' })
-			.regex(new RegExp(/^[a-zA-Z\u0400-\u04FF\s'-]+$/), 'Name should contain only letters'),
+			.min(1, { message: 'required' })
+			.regex(new RegExp(/^[a-zA-Z\u0400-\u04FF\s'-]+$/), 'invalid'),
 		phone: z
 			.string()
 			.trim()
-			.min(1, { message: 'Phone number is required' })
-			.regex(new RegExp(/^[\d+\-\s()]+$/), 'Phone should contain only numbers'),
+			.min(1, { message: 'required' })
+			.regex(new RegExp(/^[\d+\-\s()]+$/), 'invalid'),
 		policy: z
 			.string()
 			.min(2, { message: 'invalid' })
 			.nullable()
 			.refine((value) => value === 'on', {
-				message: 'Need to agreed processing of personal data',
+				message: 'required',
 			}),
 	})
 	.partial()

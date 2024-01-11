@@ -2,6 +2,7 @@
 
 import { submitData } from '@/app/lib/actions'
 import { sendTgNotification } from '@/app/lib/instance'
+import { IContactProps } from '@/app/lib/interfaces'
 import sendEmail from '@/app/lib/utils/sendEmail'
 import SubmitButton from '@/app/ui/submitButton/SubmitButton'
 import { Box, Checkbox, Flex, FormControl, FormLabel, Input, Tooltip } from '@chakra-ui/react'
@@ -10,7 +11,14 @@ import { useFormState } from 'react-dom'
 
 const inactiveBlack = 'rgba(250, 250, 250, 0.4)'
 
-const ContactForm = () => {
+const ContactForm: React.FC<IContactProps> = ({
+	contactForm: {
+		label,
+		policyTxt,
+		submitBtnTxt,
+		validation: { name, phone, policy },
+	},
+}) => {
 	const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
 	const [state, dispatch] = useFormState(submitData, undefined)
 	const ref = useRef<HTMLFormElement | null>(null)
@@ -64,7 +72,7 @@ const ContactForm = () => {
 			<Flex flexDir={'column'} gap={{ base: '35px', md: '40px', lg: '100px' }}>
 				<FormControl variant="floating" id="name">
 					<Tooltip
-						label={nameError}
+						label={nameError && nameError === 'required' ? name.required : name.invalid}
 						hasArrow
 						arrowSize={13}
 						isOpen={!!nameError}
@@ -91,14 +99,14 @@ const ContactForm = () => {
 								}}
 							/>
 							<FormLabel color={inactiveBlack} fontSize={{ base: '14px', md: '18px' }}>
-								Name*
+								{label.name}
 							</FormLabel>
 						</Box>
 					</Tooltip>
 				</FormControl>
 				<FormControl variant="floating" id="phone" isInvalid={false}>
 					<Tooltip
-						label={phoneError}
+						label={phoneError && phoneError === 'required' ? phone.required : phone.invalid}
 						hasArrow
 						arrowSize={13}
 						isOpen={!!phoneError}
@@ -125,7 +133,7 @@ const ContactForm = () => {
 								}}
 							/>
 							<FormLabel color={inactiveBlack} fontSize={{ base: '14px', md: '18px' }}>
-								Phone*
+								{label.phone}
 							</FormLabel>
 						</Box>
 					</Tooltip>
@@ -134,7 +142,7 @@ const ContactForm = () => {
 					<Tooltip
 						mt={'8px'}
 						ml={'-7px'}
-						label={policyError}
+						label={policyError && policyError === 'required' ? policy.required : policy.invalid}
 						hasArrow
 						arrowSize={16}
 						isOpen={!!policyError}
@@ -159,13 +167,13 @@ const ContactForm = () => {
 								},
 							}}
 						>
-							By clicking the button, I agree to the processing of personal data.
+							{policyTxt}
 						</Checkbox>
 					</Tooltip>
 				</FormControl>
 			</Flex>
 			<SubmitButton variant={'accent'} isSubmitting={isSubmitting}>
-				Get a free consultation
+				{submitBtnTxt}
 			</SubmitButton>
 		</Flex>
 	)
