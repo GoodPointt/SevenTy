@@ -10,5 +10,32 @@
 		"buttons": {
 			"text": "Get in touch"
 		}
+	},
+	"hero": {},
+	"projects": {},
+	"represent": {},
+	"contact": {
+		"contacts": {
+			"ctaText": "Do you have a project? Contact us and receive a free consultation! We are always happy to share our experience.👋"
+		},
+		"contactForm": {
+			"label": {
+				"name": "Name*",
+				"phone": "Phone*"
+			},
+			"policyTxt": "By clicking the button, I agree to the processing of personal data.",
+			"submitBtnTxt": "Get a free consultation",
+			"validation": {
+				"name": { "invalid": "Name should contain only letters", "required": "Name is required" },
+				"phone": {
+					"invalid": "Phone should contain only numbers",
+					"required": "Phone number is required"
+				},
+				"policy": {
+					"invalid": "Need to agreed processing of personal data",
+					"required": "Need to agreed processing of personal data"
+				}
+			}
+		}
 	}
 }
