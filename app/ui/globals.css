@@ -305,3 +305,10 @@ a {
 a:hover {
 	text-decoration: none;
 }
+
+@media screen and (max-width: 767px) {
+	#represent-section{
+		height: auto;
+		padding: 110px 0;
+	}
+}
