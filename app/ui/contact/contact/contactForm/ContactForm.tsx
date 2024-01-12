@@ -62,7 +62,7 @@ const ContactForm: React.FC<Omit<IContactProps, 'contacts'>> = ({
 			ref={ref}
 			flex={2}
 			flexDir={'column'}
-			gap={{ base: '50px', lg: 0 }}
+			gap={{ base: '40px', lg: 0 }}
 			justify={{ base: 'center', lg: 'space-between' }}
 		>
 			<Flex flexDir={'column'} gap={{ base: '35px', md: '40px', lg: '100px' }}>

@@ -9,7 +9,7 @@ const Contact: React.FC<IContactProps> = ({ contacts, contactForm }) => {
 	return (
 		<SectionWrapper
 			py={0}
-			pt={{ base: '30px', lg: '90px', xl: '130px' }}
+			pt={{ base: '0px', lg: '90px', xl: '130px' }}
 			id={'contactForm'}
 			containerWrapStyles={{
 				backgroundColor: '#111414',
@@ -20,9 +20,15 @@ const Contact: React.FC<IContactProps> = ({ contacts, contactForm }) => {
 			<Flex
 				flexDir={{ base: 'column', lg: 'row' }}
 				justify={'space-between'}
-				gap={{ base: 0, md: 20 }}
+				gap={{ base: 0, lg: 10, xl: 20 }}
 				h={'100%'}
-				p={{ base: '30px 0 0px 0', md: '120px 0 120px 0' }}
+				p={{
+					base: '30px 0 0px 0',
+					md: '120px 0 120px 0',
+					'2xl': '180px 0 200px 0',
+				}}
+				margin={'auto 0'}
+				maxH={'1000px'}
 			>
 				<Contacts contacts={contacts} />
 				<ContactForm contactForm={contactForm} />
