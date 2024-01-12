@@ -7,7 +7,6 @@ const Contacts: React.FC<Omit<IContactProps, 'contactForm'>> = ({ contacts: { ct
 	return (
 		<Flex
 			flex={2}
-			// pt={'50px'}
 			flexDir={'column'}
 			gap={{ base: '50px', lg: 0 }}
 			justify={{ base: 'center', lg: 'space-between' }}
