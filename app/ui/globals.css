@@ -23,6 +23,15 @@ body {
 	scroll-behavior: 'smooth';
 }
 
+input {
+	caret-color: rgb(255, 123, 0);
+}
+
+::selection {
+	background-color: rgb(255, 123, 0);
+	color: black;
+}
+
 /*START OF SCROLL STYLES*/
 
 /* html::-webkit-scrollbar,
