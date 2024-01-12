@@ -13,7 +13,7 @@ const Contacts: React.FC<Omit<IContactProps, 'contactForm'>> = ({ contacts: { ct
 		>
 			<Text
 				color={'bodyWhite'}
-				fontSize={{ base: '20px', md: '30px', lg: '40px' }}
+				fontSize={{ base: '20px', md: '24px', lg: '36px' }}
 				fontStyle={'normal'}
 				fontWeight={600}
 				lineHeight={1.4}

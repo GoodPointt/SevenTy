@@ -65,7 +65,7 @@ const ContactForm: React.FC<Omit<IContactProps, 'contacts'>> = ({
 			gap={{ base: '40px', lg: 0 }}
 			justify={{ base: 'center', lg: 'space-between' }}
 		>
-			<Flex flexDir={'column'} gap={{ base: '35px', md: '40px', lg: '100px' }}>
+			<Flex flexDir={'column'} gap={{ base: '35px', md: '40px', lg: '80px' }}>
 				<FormControl variant="floating" id="name">
 					<Tooltip
 						label={nameError && nameError === 'required' ? name.required : name.invalid}

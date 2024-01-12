@@ -24,11 +24,11 @@ const Contact: React.FC<IContactProps> = ({ contacts, contactForm }) => {
 				h={'100%'}
 				p={{
 					base: '30px 0 0px 0',
-					md: '120px 0 120px 0',
+					md: '80px 0 80px 0',
 					'2xl': '180px 0 200px 0',
 				}}
 				margin={'auto 0'}
-				maxH={'1000px'}
+				maxH={{ '2xl': '1000px' }}
 			>
 				<Contacts contacts={contacts} />
 				<ContactForm contactForm={contactForm} />
